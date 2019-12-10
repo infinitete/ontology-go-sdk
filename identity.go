@@ -16,7 +16,7 @@ import (
 
 const (
 	SCHEME = "did"
-	METHOD = "ont"
+	METHOD = "idfor"
 	VER    = 0x41
 )
 
@@ -382,10 +382,10 @@ func VerifyID(id string) bool {
 	if len(id) < 9 {
 		return false
 	}
-	if id[0:8] != "did:ont:" {
+	if id[0:10] != "did:idfor:" {
 		return false
 	}
-	buf, err := base58.BitcoinEncoding.Decode([]byte(id[8:]))
+	buf, err := base58.BitcoinEncoding.Decode([]byte(id[10:]))
 	if err != nil {
 		return false
 	}
