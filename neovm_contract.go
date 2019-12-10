@@ -3,11 +3,11 @@ package ontology_go_sdk
 import (
 	"encoding/hex"
 	"fmt"
-	sdkcom "github.com/ontio/ontology-go-sdk/common"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/types"
-	httpcom "github.com/ontio/ontology/http/base/common"
+	sdkcom "git.fe-cred.com/idfor/idfor-go-sdk/common"
+	"git.fe-cred.com/idfor/idfor/common"
+	"git.fe-cred.com/idfor/idfor/core/payload"
+	"git.fe-cred.com/idfor/idfor/core/types"
+	httpcom "git.fe-cred.com/idfor/idfor/http/base/common"
 	"time"
 )
 

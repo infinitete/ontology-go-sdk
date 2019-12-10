@@ -4,15 +4,15 @@ import (
 	"bytes"
 	"encoding/hex"
 	"fmt"
+	sdkcom "git.fe-cred.com/idfor/idfor-go-sdk/common"
+	"git.fe-cred.com/idfor/idfor-go-sdk/utils"
+	"git.fe-cred.com/idfor/idfor/common"
+	"git.fe-cred.com/idfor/idfor/common/serialization"
+	"git.fe-cred.com/idfor/idfor/core/types"
+	cutils "git.fe-cred.com/idfor/idfor/core/utils"
+	"git.fe-cred.com/idfor/idfor/smartcontract/service/native/global_params"
+	"git.fe-cred.com/idfor/idfor/smartcontract/service/native/ont"
 	"github.com/ontio/ontology-crypto/keypair"
-	sdkcom "github.com/ontio/ontology-go-sdk/common"
-	"github.com/ontio/ontology-go-sdk/utils"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/serialization"
-	"github.com/ontio/ontology/core/types"
-	cutils "github.com/ontio/ontology/core/utils"
-	"github.com/ontio/ontology/smartcontract/service/native/global_params"
-	"github.com/ontio/ontology/smartcontract/service/native/ont"
 )
 
 var (

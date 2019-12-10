@@ -22,23 +22,23 @@ package ontology_go_sdk
 import (
 	"encoding/hex"
 	"fmt"
+	"git.fe-cred.com/idfor/idfor-go-sdk/bip44"
+	"git.fe-cred.com/idfor/idfor/smartcontract/event"
 	"github.com/ontio/go-bip32"
-	"github.com/ontio/ontology-go-sdk/bip44"
-	"github.com/ontio/ontology/smartcontract/event"
 	"github.com/tyler-smith/go-bip39"
 	"io"
 	"math/rand"
 	"time"
 
+	"git.fe-cred.com/idfor/idfor-go-sdk/client"
+	common3 "git.fe-cred.com/idfor/idfor-go-sdk/common"
+	"git.fe-cred.com/idfor/idfor-go-sdk/utils"
+	"git.fe-cred.com/idfor/idfor/common"
+	common2 "git.fe-cred.com/idfor/idfor/common"
+	"git.fe-cred.com/idfor/idfor/common/constants"
+	"git.fe-cred.com/idfor/idfor/core/payload"
+	"git.fe-cred.com/idfor/idfor/core/types"
 	"github.com/ontio/ontology-crypto/keypair"
-	"github.com/ontio/ontology-go-sdk/client"
-	common3 "github.com/ontio/ontology-go-sdk/common"
-	"github.com/ontio/ontology-go-sdk/utils"
-	"github.com/ontio/ontology/common"
-	common2 "github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/constants"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/types"
 )
 
 func init() {

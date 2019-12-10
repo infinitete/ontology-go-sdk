@@ -4,11 +4,11 @@ import (
 	"crypto/elliptic"
 	"encoding/hex"
 	"fmt"
+	"git.fe-cred.com/idfor/idfor/common"
+	"git.fe-cred.com/idfor/idfor/core/types"
 	"github.com/ontio/ontology-crypto/ec"
 	"github.com/ontio/ontology-crypto/keypair"
 	s "github.com/ontio/ontology-crypto/signature"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/types"
 )
 
 type Signer interface {

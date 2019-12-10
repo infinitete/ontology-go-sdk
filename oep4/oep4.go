@@ -20,10 +20,10 @@ package oep4
 import (
 	"encoding/hex"
 	"fmt"
+	scomm "git.fe-cred.com/idfor/idfor-go-sdk/common"
+	"git.fe-cred.com/idfor/idfor-go-sdk/utils"
 	"github.com/ontio/ontology-crypto/keypair"
 	ontology_go_sdk "github.com/ontio/ontology-go-sdk"
-	scomm "github.com/ontio/ontology-go-sdk/common"
-	"github.com/ontio/ontology-go-sdk/utils"
 	"github.com/ontio/ontology/common"
 	"github.com/ontio/ontology/core/types"
 	"math/big"
