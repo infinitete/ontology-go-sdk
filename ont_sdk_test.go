@@ -23,13 +23,14 @@ import (
 	"encoding/hex"
 	"fmt"
 	common2 "git.fe-cred.com/idfor/idfor-go-sdk/common"
+	"git.fe-cred.com/idfor/idfor/common"
+	"git.fe-cred.com/idfor/idfor/core/payload"
+	"git.fe-cred.com/idfor/idfor/core/utils"
+	"git.fe-cred.com/idfor/idfor/core/validation"
+	"git.fe-cred.com/idfor/idfor/smartcontract/event"
+	"git.fe-cred.com/idfor/idfor/smartcontract/service/native/ont"
+	"github.com/ontio/ontology-crypto/keypair"
 	"github.com/ontio/ontology-crypto/signature"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/utils"
-	"github.com/ontio/ontology/core/validation"
-	"github.com/ontio/ontology/smartcontract/event"
-	"github.com/ontio/ontology/smartcontract/service/native/ont"
 	"github.com/stretchr/testify/assert"
 	"github.com/tyler-smith/go-bip39"
 	"math/rand"
@@ -550,5 +551,32 @@ func TestWsTransfer(t *testing.T) {
 	for _, notify := range evts.Notify {
 		fmt.Printf("ContractAddress:%s\n", notify.ContractAddress)
 		fmt.Printf("States:%+v\n", notify.States)
+	}
+}
+
+func TestAccountEncryption(t *testing.T) {
+	wallet := NewWallet("wallet.json")
+	const text = "Hello"
+	acc, _ := wallet.NewAccount(keypair.PK_ECDSA, keypair.P256, signature.SHA224withECDSA, []byte("123456"))
+	enc_dec(t, acc, text)
+
+	acc1, err := wallet.NewAccount(keypair.PK_SM2, keypair.SM2P256V1, signature.SM3withSM2, []byte("123456"))
+	if err != nil {
+		t.Errorf("Acc1 Error: %s", err)
+	}
+	enc_dec(t, acc1, text)
+}
+
+func enc_dec(t *testing.T, acc *Account, text string) {
+	ecd, err := acc.Encrypt([]byte(text))
+	if err != nil {
+		t.Errorf("TestAccountEncryption error: %s", err)
+	}
+	want, err := acc.Decrypt(ecd)
+	if err != nil {
+		t.Errorf("TestAccountEncryption error: %s", err)
+	}
+	if text != string(want) {
+		t.Fatalf("TestAccountEncryption error: want %s, but got %s", text, want)
 	}
 }

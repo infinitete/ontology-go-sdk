@@ -19,7 +19,7 @@ package oep4
 
 import (
 	"fmt"
-	"github.com/ontio/ontology/common"
+	"git.fe-cred.com/idfor/idfor/common"
 	"math/big"
 )
 

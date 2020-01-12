@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"git.fe-cred.com/idfor/idfor/core/payload"
 	ontology_go_sdk "github.com/ontio/ontology-go-sdk"
-	"github.com/ontio/ontology/core/payload"
 )
 
 func main() {
